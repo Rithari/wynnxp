@@ -1,0 +1,108 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header styles */
+h1, h2, h3 {
+    color: #55FFFF;
+    margin-bottom: 10px;
+}
+
+/* Info box styles */
+.info-box {
+    background-color: #2a2a2a;
+    border: 1px solid #55FFFF;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.info-box.collapsed .info-content {
+    display: none;
+}
+
+/* Category styles */
+.category {
+    margin-bottom: 30px;
+}
+
+.category-header {
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Item styles */
+.item {
+    background-color: #2a2a2a;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.item-header {
+    cursor: pointer;
+}
+
+.item-details {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+}
+
+/* Item tier colors */
+.MYTHIC { color: #AA00AA; }
+.FABLED { color: #FF5555; }
+.LEGENDARY { color: #5555FF; }
+.RARE { color: #55FFFF; }
+.UNIQUE { color: #FFFF55; }
+.SET { color: #55FF55; }
+.NORMAL { color: #FFFFFF; }
+
+/* Button styles */
+button {
+    background-color: #55FFFF;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00cccc;
+}
+
+/* Timestamp styles */
+#timestamp {
+    color: #55FFFF;
+    margin: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Summary section */
+.summary {
+    background-color: #2a2a2a;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.summary.collapsed .summary-content {
+    display: none;
+}
+
+/* Trade status */
+.tradeable { color: #55FF55; }
+.untradeable { color: #FF5555; } 
