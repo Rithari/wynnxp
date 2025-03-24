@@ -28,30 +28,25 @@ function saveToCache(items) {
 
 // UI Interaction
 function toggleCategory(categoryId) {
-    const category = document.getElementById(categoryId);
-    const items = category.getElementsByClassName('item');
-    Array.from(items).forEach(item => {
-        item.style.display = item.style.display === 'none' ? 'block' : 'none';
-    });
+    const content = document.querySelector(`#${categoryId} .category-content`);
+    content.classList.toggle('show');
 }
 
 function expandAll() {
-    const items = document.getElementsByClassName('item');
-    Array.from(items).forEach(item => {
-        item.style.display = 'block';
+    document.querySelectorAll('.category-content').forEach(content => {
+        content.classList.add('show');
     });
 }
 
 function collapseAll() {
-    const items = document.getElementsByClassName('item');
-    Array.from(items).forEach(item => {
-        item.style.display = 'none';
+    document.querySelectorAll('.category-content').forEach(content => {
+        content.classList.remove('show');
     });
 }
 
-function toggleItem(itemId) {
-    const details = document.getElementById(itemId + '-details');
-    details.style.display = details.style.display === 'none' ? 'block' : 'none';
+function toggleItemDetails(itemId) {
+    const details = document.querySelector(`#${itemId} .item-details`);
+    details.classList.toggle('show');
 }
 
 function toggleSection(element) {
@@ -61,7 +56,7 @@ function toggleSection(element) {
 // Data fetching and display
 async function fetchData() {
     try {
-        const response = await fetch('/api/items');
+        const response = await fetch('https://api.leolucadatri.io/api/items');
         if (!response.ok) throw new Error('Network response was not ok');
         const data = await response.json();
         
@@ -116,7 +111,7 @@ function displayItems(items) {
             
             html += `
                 <div class="item" style="display: none;">
-                    <div class="item-header" onclick="toggleItem('${item.name}')">
+                    <div class="item-header" onclick="toggleItemDetails('${item.name}')">
                         <span class="${tierClass}">${item.name}</span>
                         <span class="${tradeClass}">[${item.restrictions?.untradeable ? 'Untradeable' : 'Tradeable'}]</span>
                         - Level ${levelReq} - XP: +${xpBonus}%
